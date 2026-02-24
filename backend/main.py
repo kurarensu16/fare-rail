@@ -25,6 +25,10 @@ app.add_middleware(
 )
 
 
+@app.get("/ping")
+def ping():
+    return {"status": "ok"}
+
 
 @app.get("/stations", response_model=List[schemas.Station])
 def get_stations(
